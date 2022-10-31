@@ -1,0 +1,19 @@
+{
+    "author": "Jaime Still",
+    "classifications": [ "Web", "WebAPI", "EF" ],
+    "name": "ASP.NET Core EF Starter Web API",
+    "identity": "EfApi",
+    "shortname": "efapi",
+    "tags": {
+        "language": "C#"
+    },
+    "sourceName": "EfApi",
+    "preferNameDirectory": "true",
+    "symbols": {
+        "database": {
+            "type": "parameter",
+            "defaultValue": "app",
+            "replaces": "ef-api"
+        }
+    }
+}

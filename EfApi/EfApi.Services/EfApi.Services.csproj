@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EfApi.Data\EfApi.Data.csproj" />
+    <ProjectReference Include="..\EfApi.Models\EfApi.Models.csproj" />
+  </ItemGroup>
+
+</Project>
