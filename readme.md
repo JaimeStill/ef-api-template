@@ -10,3 +10,9 @@ dotnet new efapi -n {name} -o {output-directory} --database {database}
 # example
 dotnet new efapi -n Test -o test-api --database test-app
 ```
+
+To uninstall:
+
+```bash
+dotnet new --uninstall .\EfAPi\
+```
