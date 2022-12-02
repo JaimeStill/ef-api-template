@@ -1,6 +1,6 @@
 # ASP.NET Core EF Starter Web API
 
-```bash
+```PowerShell
 # install dotnet new template
 dotnet new --install .\EfApi\
 
@@ -13,6 +13,12 @@ dotnet new efapi -n Test -o test-api --database test-app
 
 To uninstall:
 
-```bash
+```PowerShell
 dotnet new --uninstall .\EfAPi\
+```
+
+To update NuGet dependencies:
+
+```PowerShell
+.\update.ps1
 ```
