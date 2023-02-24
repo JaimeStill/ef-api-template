@@ -1,19 +1,13 @@
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS base
 WORKDIR /app
-EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /src
-COPY ["EfApi.Api/EfApi.Api.csproj", "EfApi.Api/"]
-RUN dotnet restore "EfApi.Api/EfApi.Api.csproj"
 COPY . .
-WORKDIR "/src/EfApi.Api"
-RUN dotnet build "EfApi.Api.csproj" -c Release -o /app
+WORKDIR /app/EfApi.Api/
+RUN dotnet restore
+RUN dotnet publish -c Release -o /app/out
 
-FROM build AS publish
-RUN dotnet publish "EfApi.Api.csproj" -c Release -o /app
-
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /app
-COPY --from=publish /app .
+COPY --from=base /app/out .
+EXPOSE 80
 ENTRYPOINT ["dotnet", "EfApi.Api.dll"]
